@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: ([name, comment]) => dispatch(addTodo([name, comment])),
+        addTodo: ([name, comment, date]) => dispatch(addTodo([name, comment, date])),
         toggleTodo: (id) => dispatch(toggleTodo(id)),
         onchangeName: (name) => dispatch(onchangeName(name)),
         onchangeComment: (comment) => dispatch(onchangeComment(comment))

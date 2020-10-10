@@ -4,8 +4,6 @@ const todos = (state = [], action) => {
 
         case "ADD_TODO":
             if (action.name != "" & action.comment != "") {
-            var dateNow = new Date();
-            var month =["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
             return {
                 comments: [
                 ...state.comments,
@@ -13,7 +11,7 @@ const todos = (state = [], action) => {
                     id: action.id,
                     name: action.name,
                     comment: action.comment,
-                    date: dateNow.getDate() + "." + month[dateNow.getMonth()] + "." + dateNow.getFullYear()
+                    date: action.date
                 }],
                 form: {
                     name: '',
@@ -25,7 +23,6 @@ const todos = (state = [], action) => {
             }
 
         case "REMOVE_COMMENT":
-            console.log("редьюсер - Удаление комментария")
             return {
                 comments: state.comments.filter((todo) => todo.id !== action.id),
                 form: {

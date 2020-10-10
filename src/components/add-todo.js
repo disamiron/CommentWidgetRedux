@@ -1,4 +1,7 @@
 import React from "react";
+import dateNow from "../components/date-now"
+
+
 const AddTodo = (props) => {
     const {todos, addTodo, onchangeName, onchangeComment} = props;
     return (
@@ -21,7 +24,7 @@ const AddTodo = (props) => {
             /><br/>
             <button class="add-btn"
                 onClick={ev => {
-                addTodo([todos.form.name, todos.form.comment]);
+                addTodo([todos.form.name, todos.form.comment, dateNow()]);
             }}>Добавить комментарий
             </button>
         </div>

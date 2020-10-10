@@ -1,16 +1,16 @@
 let nextTodoId = 3;
 
-export const addTodo = ([name, comment]) => {
+export const addTodo = ([name, comment, date]) => {
     return {
         type: "ADD_TODO",
         id: nextTodoId++,
         name,
-        comment
+        comment,
+        date
     }
 };
 
 export const toggleTodo = (id) => {
-    console.log("экшн - Удаление комментария")
     return {
         type: "REMOVE_COMMENT",
         id
